@@ -6,11 +6,11 @@ test:
 
 compose-up:
 	@docker-compose build
-	@docker-compose up
+	@docker-compose up -d
 
 compose-down:
 	@docker compose down
-	@docker volume prune -a -f
+	@docker volume prune -f --filter="label!=name=projeto-api-flask_db_data"
 
 heroku:
 	@heroku container:login
