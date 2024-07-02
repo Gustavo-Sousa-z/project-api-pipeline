@@ -10,7 +10,7 @@
 
    - **/user** para registrar um novo usuário (POST)
 
-2. Persistir dados em um Banco de Dados. \*\*Neste projeto foi utilizado
+2. Persistir dados em um Banco de Dados. **Neste projeto foi utilizado MongoDB**
 
 3. Configurar a aplicação para rodar dentro de um Docker container(Dockerfile).
 
