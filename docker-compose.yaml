@@ -1,21 +1,10 @@
 services:
-  mongodb:
-    image: mongo:5.0.8
-    container_name: mongodb
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
-    restart: always
-    networks:
-      - api-network
-    #volumes:
-    #  - db_data:/var/lib/mongo
-
   api:
     build:
       context: .
+    container_name: api
     ports:
-      - 80:5000
+      - 5000:5000
     environment:
       - FLASK_ENV=development
       - MONGODB_DB=users
@@ -29,6 +18,20 @@ services:
       - ./application:/app/application
     networks:
       - api-network
+
+  mongodb:
+    image: mongo:5.0.8
+    container_name: mongodb-api
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    restart: always
+    networks:
+      - api-network
+    ports:
+      - 27017:27017
+    #volumes:
+    #  - db_data:/var/lib/mongo
 
 networks:
   api-network:
