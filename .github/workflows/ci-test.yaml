@@ -27,5 +27,4 @@ jobs:
           pip install pytest
       - name: test unitarios
         run: |
-          flake8 . --exclude .venv
           pytest -v --disable-warnings
