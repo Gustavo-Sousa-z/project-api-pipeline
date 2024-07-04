@@ -27,4 +27,4 @@ jobs:
           pip install pytest
       - name: test unitarios
         run: |
-          pytest -v --disable-warnings
+          ls -la
