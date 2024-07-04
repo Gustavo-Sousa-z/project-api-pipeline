@@ -24,7 +24,7 @@ class TestApplication():
         return {
             "first_name": "Gustavo",
             "last_name": "Sousa",
-            "cpf": "641.396.500-27",
+            "cpf": "641.396.500-28",
             "email": "gustavo.sousa@teste.com.br",
             "birth_date": "1996-09-10"
         }
@@ -47,7 +47,7 @@ class TestApplication():
         assert response.status_code == 200
         assert response.json[0]["first_name"] == "Gustavo"
         assert response.json[0]["last_name"] == "Sousa"
-        assert response.json[0]["cpf"] == "641.396.500-27"
+        assert response.json[0]["cpf"] == "641.396.500-28"
         assert response.json[0]["email"] == "gustavo.sousa@teste.com.br"
 
         birth_date = response.json[0]["birth_date"]["$date"]
