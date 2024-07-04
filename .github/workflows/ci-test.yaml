@@ -22,8 +22,8 @@ jobs:
           python-version: "3.10"
       - name: Instalando dependencias
         run: |
-          pip install -r -y requirements.txt
-          pip install pytest -y
+          pip install -r requirements.txt
+          pip install pytest
       - name: test unitarios
         run: |
           flake8 . --exclude .venv
