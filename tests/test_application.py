@@ -24,7 +24,7 @@ class TestApplication():
         return {
             "first_name": "Gustavo",
             "last_name": "Sousa",
-            "cpf": "641.396.500-27",
+            "cpf": "892.244.030-93",
             "email": "gustavo.sousa@teste.com.br",
             "birth_date": "1998-08-04"
         }
