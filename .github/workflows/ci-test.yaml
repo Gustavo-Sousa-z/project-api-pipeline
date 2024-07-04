@@ -23,6 +23,7 @@ jobs:
       - name: Instalando dependencias
         run: |
           pip install -r requirements.txt
+          pip install flask-mongoengine
           pip install pytest
       - name: test unitarios
         run: |
