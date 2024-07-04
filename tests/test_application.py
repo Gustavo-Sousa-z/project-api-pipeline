@@ -22,11 +22,11 @@ class TestApplication():
     @pytest.fixture
     def invalid_user(self):
         return {
-            "first_name": "João",
-            "last_name": "Santos",
-            "cpf": "242.753.346-24",
-            "email": "Joao.Santos@testedois.com",
-            "birth_date": "1924-21-52"
+            "first_name": "Gustavo",
+            "last_name": "Sousa",
+            "cpf": "892.244.030-93",
+            "email": "gustavo.sousa@teste.com.br",
+            "birth_date": "1998-08-04"
         }
 
     def test_get_users(self, client):

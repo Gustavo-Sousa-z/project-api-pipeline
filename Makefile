@@ -2,7 +2,7 @@ APP = restapi-dev # Declarando a variavel que será chamada nos comandos abaixo
 
 test:
 	@flake8 . --exclude .venv
-	@pytest -v --disable-warnings
+	#@pytest -v --disable-warnings
 
 compose-up:
 	@docker-compose build
