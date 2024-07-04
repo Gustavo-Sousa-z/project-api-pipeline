@@ -27,4 +27,5 @@ jobs:
           pip install pytest
       - name: test unitarios
         run: |
-          ls -la
+          make compose-up
+          make compose-down
