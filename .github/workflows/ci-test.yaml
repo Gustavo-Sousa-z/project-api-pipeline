@@ -5,12 +5,11 @@ name: Deploy Heroku
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -26,3 +25,16 @@ jobs:
 
       - name: test unitarios
         run: make test
+
+  deploy:
+    needs: test # Declarando que para esse job ser executado, ele precisa primeiro efetuar os job test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy no Heroku
+        run: make heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.nome_da_variavel }} # Chamando o valor da variavel configurada no github
+          # Essa variavel é utilizada no Heroku para autenticação no cli
