@@ -1,4 +1,4 @@
-APP = restapi-dev
+APP = restapi-dev # Declarando a variavel que será chamada nos comandos abaixo
 
 test:
 	@flake8 . --exclude .venv
