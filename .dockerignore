@@ -1,0 +1,8 @@
+README.md
+Makefile
+docker-compose.yaml
+.gitignore
+/.github
+/tests
+Dockerfile
+conftest.py
