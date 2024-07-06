@@ -8,11 +8,11 @@ services:
     ports:
       - 5000:5000
     environment:
-      - FLASK_ENV=development
-      - MONGODB_DB=users
-      - MONGODB_HOST=mongodb
-      - MONGODB_USERNAME=admin
-      - MONGODB_PASSWORD=admin
+      - FLASK_ENV=${FLASK_ENV_DEV}
+      - MONGODB_DB=${NAME_DB}
+      - MONGODB_HOST=${HOST_DB}
+      - MONGODB_USERNAME=${USERNAME_DB}
+      - MONGODB_PASSWORD=${PASSWORD_DB}
     restart: always
     depends_on:
       - mongodb
@@ -24,11 +24,11 @@ services:
   mongodb:
     image: mongo:5.0.8
     labels:
-      "name": "teste"
+      "name": "teste" # Utilizado para persistir os dados do mongo e limpar os volumes desnecessários do docker volume
     container_name: mongodb-api
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_ROOT_USERNAME: ${USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
     restart: always
     networks:
       - api-network
