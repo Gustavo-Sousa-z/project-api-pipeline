@@ -6,3 +6,4 @@ docker-compose.yaml
 /tests
 Dockerfile
 conftest.py
+/application/README.md
